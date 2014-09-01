@@ -28,15 +28,15 @@ Example :
 
 Force https support, uncomment this bloc in "simplelaravelserver/app/filters.php"
 
-App::before(function($request)
-{
-	/*
-	TODO : decommenter ce bloc pour forcer le https
-	if( ! Request::secure())
-	{
-	return Redirect::secure(Request::getRequestUri());
-	} */
-});
+`App::before(function($request)  
+{  
+	/*  
+	TODO : decommenter ce bloc pour forcer le https  
+	if( ! Request::secure())  
+	{  
+	return Redirect::secure(Request::getRequestUri());  
+	} */  
+});`  
 
 And configure apache with https virtual host
 
