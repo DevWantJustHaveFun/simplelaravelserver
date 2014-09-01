@@ -9,23 +9,20 @@
 
 Example :
 
-'mysql' => array(
-'driver' => 'mysql',
-'host' => 'localhost',
-'database' => 'simplelaravelserver',
-'username' => 'root',
-'password' => 'root',
-'charset' => 'utf8',
-'collation' => 'utf8_unicode_ci',
-'prefix' => '',
-)
+`'mysql' => array(`    
+`'driver' => 'mysql',`  
+`'host' => 'localhost',`  
+`'database' => 'simplelaravelserver',`  
+`'username' => 'root',`  
+`'password' => 'root',`  
+`'charset' => 'utf8',`  
+`'collation' => 'utf8_unicode_ci',`  
+`'prefix' => '',)`  
 
-- Create table and populate database with sample data
+- Run "php artisan" commande in /www/simplelaravelserver for create table and populate database with sample data
 
-php artisan migrate 
-php artisan db:seed
-
-In /www/simplelaravelserver
+`php artisan migrate`  
+`php artisan db:seed`  
 
 ### HTTPS Support
 
@@ -40,6 +37,8 @@ App::before(function($request)
 	return Redirect::secure(Request::getRequestUri());
 	} */
 });
+
+And configure apache with https virtual host
 
 ### License
 
