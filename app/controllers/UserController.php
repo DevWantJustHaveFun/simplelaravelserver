@@ -37,7 +37,16 @@ class UserController extends \BaseController {
 	 */
 	public function store()
 	{
-		//
+		$user = new User;	
+		$user->username = Request::get('username');
+		$user->password = Request::get('password');
+		$user->save();
+		 
+		return Response::json(array(
+		'error' => false,
+		'message' => 'user created'),
+		200
+		);
 	}
 
 
@@ -49,7 +58,16 @@ class UserController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		// Make sure current user owns the requested resource
+		  $user = User::where('id', $id)
+				  ->take(1)
+				  ->get();
+		 
+		  return Response::json(array(
+			  'error' => false,
+			  'users' => $user->toArray()),
+			  200
+		  );
 	}
 
 
@@ -73,7 +91,27 @@ class UserController extends \BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$user = User::where('id', $id)
+				  ->take(1)
+				  ->get();
+ 
+		if ( Request::get('username') )
+		{
+			$user->username = Request::get('username');
+		}
+
+		if ( Request::get('password') )
+		{
+			$user->password = Request::get('password');
+		}
+
+		$user->save();
+
+		return Response::json(array(
+		'error' => false,
+		'message' => 'user updated'),
+		200
+		);
 	}
 
 
@@ -85,7 +123,17 @@ class UserController extends \BaseController {
 	 */
 	public function destroy($id)
 	{
-		//
+		$user = User::where('id', $id)
+				  ->take(1)
+				  ->get();
+ 
+		$user->delete();
+
+		return Response::json(array(
+		  'error' => false,
+		  'message' => 'user deleted'),
+		  200
+		  );
 	}
 
 
