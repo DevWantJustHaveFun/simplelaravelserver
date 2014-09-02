@@ -19,7 +19,7 @@ Route::get('/', function()
 
 Route::group(array('prefix' => 'api', 'before' => 'auth.basic'), function()
 {
-  Route::resource('url', 'UrlController');
+  Route::resource('login', 'LoginController');
   Route::resource('user', 'UserController');
-  Route::resource('moto', 'MotoController');
+
 });
