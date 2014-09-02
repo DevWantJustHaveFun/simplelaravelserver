@@ -2,6 +2,9 @@
 
 ###
 
+- Wamp 2.5
+- ModRewrite!!
+
 ### Installation
 
 - Unzip the project in "www" directory
