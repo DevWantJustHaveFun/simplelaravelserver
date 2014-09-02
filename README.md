@@ -1,6 +1,6 @@
 ## Simple Laravel Server restful
 
-###
+### PreRequis
 
 - Wamp 2.5
 - ModRewrite!!
