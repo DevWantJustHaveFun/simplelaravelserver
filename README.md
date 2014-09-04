@@ -27,6 +27,8 @@ Example :
 `php artisan migrate`  
 `php artisan db:seed`  
 
+- Test Login : "test"/"test"
+
 ### HTTPS Support
 
 Force https support, uncomment this bloc in "simplelaravelserver/app/filters.php"
