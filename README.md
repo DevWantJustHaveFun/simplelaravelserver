@@ -2,7 +2,10 @@
 
 ### PreRequis
 
-- Wamp 2.5
+- Apache : 2.4.9 
+- MySQL : 5.6.17 
+- PHP : 5.5.12 
+- PHPMyAdmin : 4.1.14
 - ModRewrite!!
 
 ### Installation
